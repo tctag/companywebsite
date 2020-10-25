@@ -1,0 +1,24 @@
+footer#contacts.section.footer-classic.section-full.section-full-1.section-sm.section-inset-2.bg-gray-3.context-dark.text-md-center
+	.container
+		.subtitle-classic.wow.fadeInUp Get in touch
+		h2
+			span.d-inline-block.wow.fadeInLeft Let’s work
+			=' '
+			span.d-inline-block.wow.fadeInRight together
+		// RD Mailform
+		form.rd-form.rd-mailform( data-form-output="form-output-global" data-form-type='contact' method='post' action='bat/rd-mailform.php' )
+			.form-wrap.wow.fadeInRight
+				label.form-label( for="contact-name" ) Name
+				input#contact-name.form-input( type="text" name="name" data-constraints='@Required' )
+			.form-wrap.wow.fadeInRight
+				label.form-label( for="contact-email" ) E-Mail
+				input#contact-email.form-input( type="email" name="email" data-constraints='@Required @Email' )
+			.form-wrap.wow.fadeInRight
+				label.form-label( for="contact-message" ) Message
+				textarea#contact-message.form-input( name="message" data-constraints='@Required' )
+			.form-button.text-center
+				button.button.button-default.wow.fadeInUp( type="submit" ) Send message
+
+	.container
+		.footer-classic-list-social.wow.fadeInUp: +widget-list( 'list-social list-inline-sm' )
+		+rights.wow.fadeInUp

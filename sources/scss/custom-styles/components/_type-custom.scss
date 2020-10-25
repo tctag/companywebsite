@@ -1,0 +1,267 @@
+/*
+* Typography
+*/
+
+// Body
+body {
+	text-align: center;
+	font-family: $font-family-base;
+	font-size: $font-size-body - 1;
+	line-height: 1.71429;
+	font-weight: $font-weight-base;
+	color: $body-color;
+	background-color: $body-bg;
+	letter-spacing: .05em;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		text-align: left;
+		font-size: $font-size-body;
+	}
+
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+		line-height: $line-height-base;
+	}
+}
+
+.fp-section,
+.fp-tableCell {
+	height: auto !important;
+}
+
+// Headings
+#{headings()} {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: $headings-font-weight;
+	font-family: $font-family-sans-serif-1;
+	letter-spacing: 0;
+	color: $headings-color;
+
+	a {
+		color: inherit;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+h1,
+.heading-1 {
+	font-size: 30px;
+	line-height: $h1-line-height;
+
+	@include media-breakpoint-up(sm) {
+		font-size: $h1-font-size - 60;
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: $h1-font-size - 40;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h1-font-size - 20;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: $h1-font-size;
+	}
+}
+
+h2,
+.heading-2 {
+	font-size: 26px;
+	line-height: $h2-line-height;
+
+	@include media-breakpoint-up(md) {
+		font-size: $h2-font-size - 18;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h2-font-size - 10;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: $h2-font-size;
+	}
+}
+
+h3,
+.heading-3 {
+	font-size: 24px;
+	line-height: $h3-line-height;
+
+	@include media-breakpoint-up(md) {
+		font-size: $h3-font-size - 8;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h3-font-size - 4;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: $h3-font-size;
+	}
+}
+
+h4,
+.heading-4 {
+	font-size: 18px;
+	line-height: $h4-line-height;
+
+	@include media-breakpoint-up(md) {
+		font-size: $h4-font-size - 4;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h4-font-size - 2;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: $h4-font-size;
+	}
+}
+
+h5,
+.heading-5 {
+	font-size: 16px;
+	line-height: $h5-line-height;
+
+	@include media-breakpoint-up(md) {
+		font-size: $h5-font-size;
+	}
+}
+
+h6,
+.heading-6 {
+	font-size: 18px;
+	line-height: $h6-line-height;
+
+	@include media-breakpoint-up(xl) {
+		font-size: $h6-font-size;
+	}
+}
+
+// Emphasis
+small,
+.small {
+	display: block;
+	font-size: $font-size-sm;
+	line-height: $line-height-sm;
+}
+
+mark,
+.mark {
+	padding: 3px 5px;
+	color: $white;
+	background: $primary;
+}
+
+// Big text
+.big {
+	font-size: $font-size-lg;
+	line-height: $line-height-lg;
+}
+
+.lead {
+	font-size: $lead-font-size;
+	line-height: $lead-line-height;
+	font-weight: $lead-font-weight;
+}
+
+code {
+	padding: $code-padding-y $code-padding-x;
+	border-radius: $border-radius-sm;
+	font-size: $code-font-size;
+	color: $code-color;
+	background: $code-bg;
+}
+
+// Paragraph
+p {
+	[data-toggle='tooltip'] {
+		padding-left: .25em;
+		padding-right: .25em;
+		color: $primary;
+	}
+
+	[style*='max-width'] {
+		display: inline-block;
+	}
+}
+
+// Selection
+::selection {
+	background: $primary;
+	color: $white;
+}
+
+::-moz-selection {
+	background: $primary;
+	color: $white;
+}
+
+// Title Custom
+.subtitle-classic {
+	font-size: 10px;
+	line-height: 2;
+	font-weight: $headings-font-weight;
+	font-family: $font-family-sans-serif-1;
+	text-transform: uppercase;
+	letter-spacing: .4em;
+}
+
+.subtitle-classic + h2 { margin-top: 10px; }
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+
+	.subtitle-classic + h2 { margin-top: 14px; }
+}
+
+// Medium ≥992px
+@include media-breakpoint-up(lg) {
+
+	.subtitle-classic + h2 { margin-top: 20px; }
+}
+
+.title-style-1-wrap,
+.title-style-2-wrap {
+	font-size: 0;
+	line-height: 0;
+
+	* {
+		display: inline-block;
+	}
+}
+
+.title-style-1 {
+	letter-spacing: .075em;
+	padding: 8px 20px 0;
+	background: $primary;
+}
+
+.title-style-2 {
+	text-transform: uppercase;
+	letter-spacing: .4em;
+	padding: 0 3px 0 10px;
+	background: $white;
+
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		letter-spacing: .6em;
+	}
+}
+
+* + .title-style-2-wrap { margin-top: 20px; }
+.title-style-2-wrap + .button { margin-top: 30px; }
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+	* + .title-style-2-wrap { margin-top: 32px; }
+	.title-style-2-wrap + .button { margin-top: 50px; }
+}

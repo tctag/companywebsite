@@ -1,0 +1,162 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-post
+include ../components/_ui-box-comment
+
+block variables
+	-
+		var
+			activeCategory = 'blog'
+			pageName = 'Blog Post'
+
+block page
+	// Page Header
+	+header-sidebar
+	+breadcrumbs-classic
+
+	// Contacts
+	section.section.section-xl.bg-default
+		.container
+			.row.row-50.row-md-60.justify-content-center.justify-content-xl-between
+				.col-lg-8: .row.row-50.row-md-60.row-lg-80
+					.col-12
+						article.post.post-modern
+							.post-modern-panel
+								div: a.post-modern-tag.link-tag( href='#' ) News
+								div: time.post-modern-time( datetime='2018-05-04' ) May 4, 2018
+							h3.post-modern-title Top 10 Web Design Trends in 2018
+							.post-modern-figure: +jpg( 'post-4-770x500' ).img-custom-2
+							p.post-modern-text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+							p.post-modern-text At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est
+
+							.single-post-bottom-panel
+								.group-md.group-justify.justify-content-center.justify-content-sm-between
+									div: ul.list-tags
+										li: a.link-tag( href='#' ) News
+										li: a.link-tag( href='#' ) Trends
+										li: a.link-tag( href='#' ) Web Design
+									div: +widget-list( 'list-social list-inline-sm' )
+
+					.col-12
+						h4.single-post-title 3 Comments
+						+box-comment({
+							unit: 'unit-spacing-md',
+							img: 'user-1-100x100',
+							author: 'Jane Doe',
+							text: 'Lorem ipsum dolor sit amet, has mutat labores nostrum ei. Duo te blandit erroribus, ut sea ipsum nonumy, mel no ignota accusamus gloriatur. Id has habeo regione, explicari hendrerit reprimique cum te.',
+							time: {
+								datetime: '2018-08-30',
+								dateText: 'Aug 30, 2018'
+							}
+						})
+
+							+box-comment({
+								unit: 'unit-spacing-md',
+								img: 'user-2-100x100',
+								author: 'Jessica Brown',
+								text: 'Vortexs nocere, tanquam camerarius urbs. Observare inciviliter ducunt ad emeritis fuga. Cum luna messis, omnes valebates.',
+								time: {
+									datetime: '2018-08-30',
+									dateText: 'Aug 30, 2018'
+								}
+							})
+
+						+box-comment({
+							unit: 'unit-spacing-md',
+							img: 'user-3-100x100',
+							author: 'Nick Stevens',
+							text: 'Eheu. Gluten camerarius lacta est. Fugas sunt spatiis de fortis deus. Bassus, teres brabeutas sapienter consumere de emeritis, lotus zeta. A falsis, usus rusticus castor. Candidatuss sunt zeluss de.',
+							time: {
+								datetime: '2018-08-30',
+								dateText: 'Aug 30, 2018'
+							}
+						})
+
+					.col-12
+						h4.single-post-title Leave a comment
+						form.rd-form.rd-mailform( data-form-output='form-output-global' data-form-type='contact' method='post' action='bat/rd-mailform.php' )
+							.row.row-20.row-md-30
+								.col-sm-6: .form-wrap
+									input#contact-first-name-2.form-input( type='text' name='name' data-constraints='@Required' )
+									label.form-label( for='contact-first-name-2' ) First Name
+
+								.col-sm-6: .form-wrap
+									input#contact-last-name-2.form-input( type='text' name='name' data-constraints='@Required' )
+									label.form-label( for='contact-last-name-2' ) Last Name
+
+								.col-12: .form-wrap
+									label.form-label( for='contact-message-2' ) Message
+									textarea#contact-message-2.form-input.textarea-lg( name='phone' data-constraints='@Required' )
+
+							button.button.button-default( type='submit' ) Submit
+
+				.col-lg-4.col-xl-3: .row.row-60.aside.text-sm-left
+					.col-sm-6.col-lg-12.aside-item
+						// RD Search Form
+						form.rd-search.form-search( action='search-results.html' method='GET' )
+							.form-wrap
+								label.form-label(for="search-form") Search blog...
+								input#search-form.form-input(type='text', name='s', autocomplete='off')
+								button(type="submit").button-search.fl-bigmug-line-search74
+
+						.aside-title Categories
+						ul.list-style-1.list-style-2
+							li.active: a( href='#' ) News
+							li: a( href='#' ) Web Design
+							li: a( href='#' ) Trends
+							li: a( href='#' ) Development
+							li: a( href='#' ) Marketing
+
+					.col-sm-6.col-lg-12.aside-item
+						.aside-title Latest Posts
+						.post-minimal-wrap
+							+post-minimal({
+								mod: 'post-minimal-2',
+								img: 'post-1-100x100',
+								time: {
+									datetime: '2018-05-04',
+									dateText: 'May 4, 2018'
+								},
+								title: 'Top 10 Web Design Trends in 2018'
+							})
+							+post-minimal({
+								mod: 'post-minimal-2',
+								img: 'post-2-100x100',
+								time: {
+									datetime: '2018-05-04',
+									dateText: 'May 4, 2018'
+								},
+								title: 'Designing for a Local Audience'
+							})
+							+post-minimal({
+								mod: 'post-minimal-2',
+								img: 'post-3-100x100',
+								time: {
+									datetime: '2018-05-04',
+									dateText: 'May 4, 2018'
+								},
+								title: 'How to Design Your Site for Mobile Speed'
+							})
+
+					.col-sm-6.col-lg-12.aside-item
+						.aside-title Popular Tags
+						ul.list-tags
+							li: a.link-tag( href='#' ) News
+							li: a.link-tag( href='#' ) Web Design
+							li: a.link-tag( href='#' ) Ideas
+							li: a.link-tag( href='#' ) Mobile
+							li: a.link-tag( href='#' ) Trends
+							li: a.link-tag( href='#' ) Technologies
+
+					.col-sm-6.col-lg-12.aside-item
+						.aside-title Archive
+						ul.list-style-1
+							li: a( href='#' ) March 2018
+							li: a( href='#' ) February 2018
+							li: a( href='#' ) January 2018
+							li: a( href='#' ) December 2018
+
+
+	// Page Footer
+	include ../sections/_footer-classic

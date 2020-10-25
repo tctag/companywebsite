@@ -1,0 +1,36 @@
+/*
+* Footers
+*/
+
+//
+// Footer Classic
+//
+
+.footer-classic {
+
+	.rd-form {
+		max-width: 570px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	* + .rights { margin-top: 30px; }
+	* + .rd-form { margin-top: 40px; }
+
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+
+		* + .rights { margin-top: 45px; }
+		* + .rd-form { margin-top: 56px; }
+	}
+}
+
+* + .footer-classic-list-social,
+.container + .container { margin-top: 60px; }
+
+// Large ≥992px
+@include media-breakpoint-up(lg) {
+
+	* + .footer-classic-list-social,
+	.container + .container { margin-top: 85px; }
+}

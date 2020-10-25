@@ -1,0 +1,52 @@
+/*
+* Contexts
+*/
+
+%context-dark {
+	&,
+	#{headings()} {
+		color: $white;
+	}
+
+	// Lists
+	.list-social {
+
+		a { color: $gray-600; }
+	}
+
+	// Buttons
+	.button-default {
+
+		&,
+		&:focus {
+			color: inherit;
+
+			&::before {
+				border-color: $white;
+			}
+		}
+	}
+
+	// Forms
+	.form-input,
+	.form-label {
+		color: $gray-600;
+	}
+
+	.form-input {
+		border-color: rgba($gray-2, .1);
+	}
+
+	.form-validation {
+		color: inherit;
+	}
+
+}
+
+%context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+}

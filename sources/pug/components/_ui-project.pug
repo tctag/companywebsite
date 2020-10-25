@@ -1,0 +1,8 @@
+//- Project
+
+mixin project-classic( obj )
+	article.project-classic( class= obj.mod )&attributes( attributes )
+		+jpg( obj.img )
+		.project-classic-caption: div
+			h4.project-classic-title: a( href= links.project )= obj.title
+			.project-classic-tag= obj.tag

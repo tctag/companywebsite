@@ -1,0 +1,16 @@
+//- Posts
+
+mixin post-classic( obj )
+	article.post-classic( class= obj.mod )&attributes( attributes )
+		.post-classic-time: time( datetime= obj.time.datetime )= obj.time.dateText
+		h4.post-classic-title: a( href= links.post )= obj.title
+		p.post-classic-text= obj.text
+		.post-classic-author= 'by ' + obj.author
+
+mixin post-minimal( obj )
+	article.post-minimal( class= obj.mod )&attributes( attributes )
+		.unit.unit-spacing-md.align-items-center
+			.unit-left: a.post-minimal-figure( href= links.post ): +jpg( obj.img )
+			.unit-body
+				.post-minimal-time: time( datetime= obj.time.datetime )= obj.time.dateText
+				p.post-minimal-title: a( href= links.post )= obj.title

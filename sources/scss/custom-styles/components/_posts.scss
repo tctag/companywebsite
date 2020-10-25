@@ -1,0 +1,257 @@
+/*
+* Posts
+*/
+
+// 
+// Table of Contents:
+// 
+// Post Classic
+//
+//
+
+
+
+//
+// Post Classic
+//
+.post-classic {
+	text-align: left;
+	padding: 30px 15px;
+	border: 1px solid rgba($gray-900, .1);
+	transition: all .3s ease;
+}
+
+.post-classic-time {
+	font-size: 10px;
+	line-height: 2;
+	font-weight: $headings-font-weight;
+	font-family: $font-family-sans-serif-1;
+	text-transform: uppercase;
+	letter-spacing: .4em;
+}
+
+.post-classic-title {
+	letter-spacing: .05em;
+}
+
+.post-classic-author {
+	display: inline-block;
+	padding-top: 16px;
+	border-top: 1px solid $gray-900;
+}
+
+* + .post-classic-title { margin-top: 26px; }
+* + .post-classic-text { margin-top: 16px; }
+* + .post-classic-author { margin-top: 30px; }
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+
+	.post-classic {
+		padding: 40px 30px;
+	}
+
+	* + .post-classic-author { margin-top: 50px; }
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+
+	.post-classic {
+		padding: 48px 52px;
+	}
+
+	* + .post-classic-author { margin-top: 70px; }
+}
+
+.desktop {
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+
+		.post-classic-title {
+
+			a:hover {	color: rgba($gray-900, .5);	}
+		}
+
+		.post-classic:hover {
+			border-color: transparent;
+			background: $primary;
+			box-shadow: 0 6px 24px 0 rgba($black, 0.15);
+		}
+	}
+}
+
+// Context styling
+%context-dark {
+	.post-classic {
+
+	}
+}
+
+
+
+//
+// Post Minimal
+//
+.post-minimal {
+	text-align: left;
+}
+
+.post-minimal-2 {
+
+	// Small 576  ≤ 767 Medium
+	@include media-breakpoint-between(sm, sm) {
+		.post-minimal-figure img {
+			width: 80px;
+		}
+	}
+}
+
+.post-minimal-figure {
+	display: block;
+	background: $primary;
+
+	img {
+		width: 100%;
+		transition: all .3s ease;
+	}
+}
+
+.post-minimal-time {
+	font-size: 10px;
+	line-height: 2;
+	font-weight: $headings-font-weight;
+	font-family: $font-family-sans-serif-1;
+	text-transform: uppercase;
+	letter-spacing: .4em;
+}
+
+
+.post-minimal-title {
+	line-height: 1.71429;
+
+	a:hover {
+		color: $gray-900;
+		text-decoration: underline;
+	}
+}
+
+* + .post-minimal-title {	margin-top: 6px; }
+.post-minimal + .post-minimal { margin-top: 15px; }
+
+.desktop {
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+
+		.post-minimal:hover {
+
+			.post-minimal-figure img {
+				opacity: .85;
+			}
+		}
+	}
+}
+
+
+
+//
+// Post Modern
+//
+.post-modern {
+	text-align: center;
+}
+
+.post-modern-panel {
+	font-size: 0;
+	line-height: 0;
+	@include spacingX(40px);
+
+	> * {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	> * + * {
+		&::before {
+			position: absolute;
+			content: '';
+			top: 50%;
+			left: 0;
+			width: 0;
+			height: 20px;
+			margin-top: -10px;
+			border-left: 1px solid rgba($gray-900, .1);
+		}
+	}
+}
+
+.post-modern-time {
+	font-size: 10px;
+	line-height: 2;
+	font-weight: $headings-font-weight;
+	font-family: $font-family-sans-serif-1;
+	text-transform: uppercase;
+	letter-spacing: .4em;
+}
+
+.post-modern-figure {
+	img { width: 100%; }
+}
+
+.single-post-bottom-panel {
+	padding-top: 40px;
+	border-top: 1px solid $gray-200;
+}
+
+* + .post-modern-title { margin-top: 14px; }
+* + .post-modern-figure { margin-top: 20px; }
+* + .post-modern-text { margin-top: 20px; }
+* + .single-post-bottom-panel { margin-top: 30px; }
+.post-modern-text + .post-modern-text { margin-top: 14px; }
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+
+	.post-modern {
+		text-align: left;
+	}
+
+	.single-post-bottom-panel {
+		padding-top: 50px;
+	}
+
+	* + .post-modern-title { margin-top: 20px; }
+	* + .post-modern-figure { margin-top: 30px; }
+	* + .post-modern-text { margin-top: 40px; }
+	* + .single-post-bottom-panel { margin-top: 40px; }
+	.post-modern-text + .post-modern-text { margin-top: 20px; }
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+
+	* + .post-modern-title { margin-top: 30px; }
+	* + .post-modern-figure { margin-top: 40px; }
+	* + .post-modern-text { margin-top: 40px; }
+	* + .single-post-bottom-panel { margin-top: 50px; }
+	.post-modern-text + .post-modern-text { margin-top: 30px; }
+}
+
+
+
+//
+// Asdie
+//
+
+.aside-title {
+	font-size: 10px;
+	line-height: 2;
+	font-weight: $headings-font-weight;
+	font-family: $font-family-sans-serif-1;
+	text-transform: uppercase;
+	letter-spacing: .4em;
+}
+
+.rd-search + .aside-title { margin-top: 60px; }
+.aside-title + * { margin-top: 20px; }

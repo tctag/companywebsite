@@ -1,0 +1,94 @@
+//- Image
+	@param {string} name
+mixin img( name )
+	- var size = getImageSize( name );
+	img( src= setImagePath( setImageExtension( name ) ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Jpg image
+	@param {string} name
+mixin jpg( name )
+	- var size = getImageSize( name );
+	img( src= setImagePath( name +'.jpg' ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Png image
+	@param {string} name
+mixin png( name )
+	- var size = getImageSize( name );
+	img( src= setImagePath( name +'.png' ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+		block
+
+
+//- Parallax Section
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax( obj )
+	section.parallax-container( data-parallax-img= setImagePath( setImageExtension( obj.img ) ) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+
+//- Breadcrumbs
+	@param {object} obj - parameters storage
+	@param {string} obj.category - required menu category
+	@param {string} obj.bgImage - section background image
+	@param {array}  obj.path - other navigation path
+mixin breadcrumbs( obj )
+	- var activeItemName= obj.path.pop();
+	- var category = getMenuCategory( obj.category );
+
+	section.breadcrumbs-custom.bg-image.context-dark( style=obj.bgImage ? 'background-image: url('+ setImagePath( setImageExtension( obj.bgImage ) ) +');' : '' )
+		.container
+			h2.breadcrumbs-custom-title=activeItemName
+			ul.breadcrumbs-custom-path
+				li: a(href='index.html') Home
+				if ( typeof( category ) !== 'undefined' && ( category.title !== activeItemName ) )
+					li: a( href=category.link ? category.link : genLink( category.title ) )= category.title
+					-for( var i = 0; i < obj.path.length; i++)
+						li: a( href=obj.path[i].link ? obj.path[i].link : genLink( obj.path[i].title) )= obj.path[i].title
+
+				li.active=activeItemName
+
+mixin breadcrumbs-classic
+	section#home.section.section-inset-1.bg-default.text-center.bg-image.background-position-1( style='background-image: url(images/bg-image-1-1920x800.jpg)' )
+		.container
+			.title-style-1-wrap: .oh-desktop.wow.slideInLeft: h1.title-style-1.wow.slideInRight= pageName
+
+
+//- Logo
+mixin logo
+	a.brand( href='index.html' )&attributes( attributes )
+		+png( logo.default.normal )( srcset='images/'+ logo.default.retina +'.png 2x' ).brand-logo-desktop
+		+png( logo.default2.normal )( srcset='images/'+ logo.default2.retina +'.png 2x' ).brand-logo-mobile
+
+		
+//- Copyright
+mixin rights
+	p.rights&attributes( attributes )
+		span &copy;&nbsp; 
+		span.copyright-year
+		span &nbsp;
+		span= logo.name
+		span .&nbsp;
+		span All rights reserved. Terms and Conditions
+		br
+		a( href='privacy-policy.html' ) Privacy Policy.
+
+
+//- Social List Widget
+
+mixin widget-list( lclass )
+
+	ul.list-inline( class= lclass )
+		li: a( href='#' class='icon fa fa-linkedin' )
+		li: a( href='#' class='icon fa fa-twitter' )
+		li: a( href='#' class='icon fa fa-facebook' )
+		li: a( href='#' class='icon fa fa-instagram' )

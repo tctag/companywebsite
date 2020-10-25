@@ -1,0 +1,114 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-box-icon
+include ../components/_ui-team
+
+block variables
+	-
+		var
+			activeCategory = 'about'
+			pageName = 'About'
+
+block page 
+	// Page Header
+	+header-sidebar
+	+breadcrumbs-classic
+
+	// About Us
+	section.section.section-xl.bg-default
+		.container: .row.row-30.justify-content-center
+			.col-sm-9.col-md-5.cube-classic-wrap
+				.subtitle-classic.wow.fadeInLeft A Few Words About Us
+				h2.wow.fadeInLeft We are the
+					=' '
+					br.d-none.d-md-block
+					span.text-primary industry leading
+					=' '
+					br.d-none.d-md-block
+					| web design agency
+				.cube-classic.cube-classic-1
+					-for( var i = 0; i < 100; i++)
+						span.cube-classic-item
+
+			.col-md-7.col-lg-6.col-xl-5
+				p.wow.fadeInRight Regius urbss ducunt ad mens. Sunt torquises acquirere albus, fidelis galluses. Varius nixus foris attrahendams frondator est. Pol. Idoleums velum in virundum! Velox sectams ducunt ad castor. A falsis, brabeuta bassus cedrium. Plasmator potuss, tanquam mirabilis demissio. Consiliums mori in lutetia! Ferox compater aliquando locuss pulchritudine.
+				p.wow.fadeInRight Nunquam acquirere abactor. Gemna pius advena est. Noster, rusticus elevatuss cito promissio de fidelis, secundus humani generis. Vigils favere in brevis divio! Trabem sed mire ducunt ad alter hippotoxota. Impositios sunt urias de castus agripeta.
+
+
+	// Our Services
+	section.section.section-xl.bg-gray-100.text-md-center
+		.container
+			.subtitle-classic.wow.fadeInUp Our Services
+			h2
+				span.d-inline-block.wow.fadeInLeft What We
+				=' '
+				span.d-inline-block.wow.fadeInRight Offer
+			.row.row-xl.row-30
+				.col-sm-6.col-lg-3.wow.blurIn( data-wow-delay='.2s' )
+					+box-icon-modern({
+						icon: 'mdi mdi-brush',
+						title: 'Web Design',
+						text: 'Elevatus, itineris tramitem, et nuclear vexatum iacere. Sunt caesiumes contactus.'
+					})
+				.col-sm-6.col-lg-3.wow.blurIn
+					+box-icon-modern({
+						icon: 'mdi mdi-television-guide',
+						title: 'Web Development',
+						text: 'Ubi est clemens pulchrit? Cum canis ridetis, omnes ususes prensin.'
+					})
+				.col-sm-6.col-lg-3.wow.blurIn( data-wow-delay='.1s' )
+					+box-icon-modern({
+						icon: 'mdi mdi-magnify',
+						title: 'SEO',
+						text: 'Nunquam examinare consilium. Cum equiso resistere, omnes accolaes.'
+					})
+				.col-sm-6.col-lg-3.wow.blurIn( data-wow-delay='.3s' )
+					+box-icon-modern({
+						icon: 'mdi mdi-cash-usd',
+						title: 'Online Marketing',
+						text: 'Triticums ridetis in cubiculum! Flavum, secundus omnias diligenter acquire.'
+					})
+
+	// Our Team
+	section.section.section-xl.bg-default.text-md-center
+		.container
+			.subtitle-classic.wow.fadeInUp Meet our team
+			h2
+				span.d-inline-block.wow.fadeInLeft People behind
+				=' '
+				span.text-primary.d-inline-block.wow.fadeInRight our success
+			.row.row-lg.row-30.justify-content-center
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.1s' )
+					+team-classic({
+						img: 'team-1-370x502',
+						name: 'Sarah McMillan',
+						status: 'Web Designer'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn
+					+team-classic({
+						img: 'team-2-370x502',
+						name: 'Eric Smith',
+						status: 'CEO, Founder'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.1s' )
+					+team-classic({
+						img: 'team-3-370x502',
+						name: 'Ted Johnson',
+						status: 'Web Developer'
+					}).box-md
+
+	// Section Project
+	section.section.section-xl.bg-gray-100
+		.container: .row.row-30.justify-content-center.justify-content-lg-end.align-items-md-center
+			.col-sm-8.col-md-6.wow.blurIn: .figure-custom-2: +jpg('index-1-618x614').img-custom-1
+			.col-md-6
+				.subtitle-classic.wow.fadeInRight Our Advantages
+				h2.wow.fadeInRight
+					span.text-primary Why people
+					|  choose us
+				p.wow.fadeInRight Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a pellentesque mauris. Phasellus in faucibus ipsum, vel venenatis eros. Duis cursus sodales sagittis. Nunc finibus, massa eu facilisis sodales, leo sem porttitor nibh, sed lobortis orci. Aliquam aliquam eu dolor ac tristique. Nam ac nisi magna.
+				p.wow.fadeInRight Phasellus nibh purus, gravida quis lectus ac, tempor vulputate sapien. Aliquam erat volutpat. Nunc ut pharetra orci. Donec mollis felis id eleifend fringilla. Nam ac nisi magna. Interdum et malesuada fames.
+
+	// Page Footer
+	include ../sections/_footer-classic

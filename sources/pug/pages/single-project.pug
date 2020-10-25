@@ -1,0 +1,86 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-project
+
+block variables
+	-
+		var
+			activeCategory = 'project'
+			pageName = 'Single Project'
+
+block page 
+	// Page Header
+	+header-sidebar
+	+breadcrumbs-classic
+
+	// Section Project
+	section.section.section-xl.bg-default
+		.container: .row.row-30.justify-content-center.justify-content-lg-end.align-items-md-center
+			.col-sm-8.col-md-6.col-lg-5.cube-classic-wrap
+				.subtitle-classic.wow.fadeInLeft Project Description
+				h2.wow.fadeInLeft( data-wow-delay='.1s' ) Responsive website
+					=' '
+					br.d-none.d-md-block
+					| and online store
+					=' '
+					br.d-none.d-md-block
+					| for iStep Ltd.
+
+				.cube-classic.cube-classic-2
+					-for( var i = 0; i < 100; i++)
+						span.cube-classic-item
+
+				p.wow.fadeInLeft Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a pellentesque mauris. Phasellus in faucibus ipsum, vel venenatis eros. Duis cursus sodales sagittis. Nunc finibus, massa eu facilisis.
+
+			.col-sm-8.col-md-6.wow.blurIn: .figure-custom-1: +jpg('index-3-618x614').img-custom-1
+
+	// Section Project
+	section.section.bg-default
+		// Owl Carousel
+		.owl-carousel( data-items='1' data-sm-items='2' data-md-items='3' data-xl-items='4' data-autoplay='true' )
+			+project-classic({
+				img: 'project-7-480x340',
+				title: 'iStep Ltd.',
+				tag: 'Web Design'
+			})
+			+project-classic({
+				img: 'project-8-480x340',
+				title: 'Fabricator',
+				tag: 'Web Development'
+			})
+			+project-classic({
+				img: 'project-9-480x340',
+				title: 'Fresh Market',
+				tag: 'SEO'
+			})
+			+project-classic({
+				img: 'project-10-480x340',
+				title: 'Accessories Inc.',
+				tag: 'Online Marketing'
+			})
+			+project-classic({
+				img: 'project-11-480x340',
+				title: 'Corpadvise',
+				tag: 'SMM'
+			})
+			+project-classic({
+				img: 'project-12-480x340',
+				title: 'Greenbiz',
+				tag: 'Branding'
+			})
+
+	// Section Project
+	section.section.section-xl.bg-default
+		.container: .row.row-30.justify-content-center.justify-content-lg-end.align-items-md-center
+			.col-sm-8.col-md-6.wow.blurIn: .figure-custom-2: +jpg('index-2-618x614').img-custom-1
+			.col-md-6
+				.subtitle-classic.wow.fadeInRight Skills & Techniques
+				h2.wow.fadeInRight
+					span.text-primary Our Project
+					|  Approach
+				p.wow.fadeInRight Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a pellentesque mauris. Phasellus in faucibus ipsum, vel venenatis eros. Duis cursus sodales sagittis. Nunc finibus, massa eu facilisis sodales, leo sem porttitor nibh, sed lobortis orci. Aliquam aliquam eu dolor ac tristique. Nam ac nisi magna.
+				p.wow.fadeInRight Phasellus nibh purus, gravida quis lectus ac, tempor vulputate sapien. Aliquam erat volutpat. Nunc ut pharetra orci. Donec mollis felis id eleifend fringilla. Nam ac nisi magna. Interdum et malesuada fames.
+
+	// Page Footer
+	include ../sections/_footer-classic

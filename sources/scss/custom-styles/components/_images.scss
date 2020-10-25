@@ -1,0 +1,49 @@
+/*
+* Images
+*/
+
+// Standard img style
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.img-responsive {
+	width: 100%;
+}
+
+
+
+// Image Custom
+.img-custom-1 {
+	box-shadow: 0 6px 35px 0 rgba($black, .25);
+}
+
+.img-custom-2 {
+	box-shadow: 0 4px 20px 0 rgba($black, .1);
+}
+
+.figure-custom-1 {
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		padding-left: 25px;
+	}
+
+	@media ( min-width: 1500px ) {
+		margin-right: -73px;
+	}
+}
+
+.figure-custom-2 {
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		padding-right: 25px;
+	}
+
+	@media ( min-width: 1500px ) {
+		margin-left: -73px;
+	}
+}

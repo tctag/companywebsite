@@ -1,0 +1,136 @@
+/*
+*
+* Preloader
+*/
+
+//
+// Base styles
+//
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: $white;
+	transition: .3s all ease;
+	display: none;
+
+	&.loaded {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.preloader-body {
+	text-align: center;
+
+	p {
+		position: relative;
+		right: -8px;
+	}
+}
+
+* + .preloader-title { margin-top: 20px; }
+
+//
+// Custom Styles
+//
+
+.cssload-spinner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: relative;
+	margin: auto;
+	width: 100px;
+	height: 100px;
+}
+
+.cssload-cube {
+	background-color: $primary;
+	width: 15px;
+	height: 15px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	animation: cssload-cubemove 4.6s infinite ease-in-out;
+}
+
+.cssload-cube1 {
+	animation-delay: 0.23s;
+}
+
+.cssload-cube2 {
+	animation-delay: 0.46s;
+}
+
+.cssload-cube3 {
+	animation-delay: 0.69s;
+}
+
+.cssload-cube4 {
+	animation-delay: 0.23s;
+}
+
+.cssload-cube5 {
+	animation-delay: 0.46s;
+}
+
+.cssload-cube6 {
+	animation-delay: 0.69s;
+}
+
+.cssload-cube7 {
+	animation-delay: 0.92s;
+}
+
+.cssload-cube8 {
+	animation-delay: 0.46s;
+}
+
+.cssload-cube9 {
+	animation-delay: 0.69s;
+}
+
+.cssload-cube10 {
+	animation-delay: 0.92s;
+}
+
+.cssload-cube11 {
+	animation-delay: 1.15s;
+}
+
+.cssload-cube12 {
+	animation-delay: 0.69s;
+}
+
+.cssload-cube13 {
+	animation-delay: 0.92s;
+}
+
+.cssload-cube14 {
+	animation-delay: 1.15s;
+}
+
+.cssload-cube15 {
+	animation-delay: 1.38s;
+}
+
+
+
+@keyframes cssload-cubemove {
+	35% {
+		transform: scale(0.005);
+	}
+	50% {
+		transform: scale(1.7);
+	}
+	65% {
+		transform: scale(0.005);
+	}
+}

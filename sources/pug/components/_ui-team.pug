@@ -1,0 +1,9 @@
+//- Team
+
+mixin team-classic( obj )
+	article.team-classic( class= obj.mod )&attributes( attributes )
+		+jpg( obj.img )
+		.team-classic-caption: div
+			h4.team-classic-name: a( href='#' )= obj.name
+			.team-classic-status= obj.status
+			+widget-list( 'team-classic-list-social list-inline-sm' )

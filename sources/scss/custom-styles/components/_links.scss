@@ -1,0 +1,63 @@
+/*
+* Links
+*/
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	@include link($link-color, $link-hover-color);
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.privacy-link {
+	display: inline-block;
+}
+
+* + .privacy-link {
+	margin-top: 40px;
+}
+
+
+
+// Link tags
+.link-tag {
+	display: inline-block;
+	padding: 0 5px;
+	font-size: $font-size-body;
+	line-height: 1.93;
+	font-weight: 400;
+	letter-spacing: .1em;
+	font-family: $font-family-sec;
+	text-transform: uppercase;
+
+	&,
+	&:active,
+	&:focus {
+		background: $primary;
+	}
+
+	&:hover {
+		color: $white;
+		background: $gray-900;
+	}
+}

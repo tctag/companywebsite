@@ -1,0 +1,52 @@
+mixin header-sidebar
+	header.page-header
+		// RD Navbar
+		.rd-navbar-wrap
+			nav.rd-navbar(
+			data-layout=                'rd-navbar-sidebar'
+			data-device-layout=         'rd-navbar-sidebar'
+			data-sm-layout=             'rd-navbar-sidebar'
+			data-sm-device-layout=      'rd-navbar-sidebar'
+			data-md-layout=             'rd-navbar-sidebar'
+			data-md-device-layout=      'rd-navbar-sidebar'
+			data-lg-layout=             'rd-navbar-sidebar'
+			data-lg-device-layout=      'rd-navbar-sidebar'
+			data-xl-layout=             'rd-navbar-sidebar'
+			data-xl-device-layout=      'rd-navbar-sidebar'
+			data-xxl-layout=            'rd-navbar-sidebar'
+			data-xxl-device-layout=     'rd-navbar-sidebar'
+			data-lg-stick-up-offset=    '46px'
+			data-xl-stick-up-offset=    '46px'
+			data-xxl-stick-up-offset=   '46px'
+			data-lg-stick-up=           'true'
+			data-xl-stick-up=           'true'
+			data-xxl-stick-up=          'true'
+			data-body-class=            'rd-navbar-style-1')
+				.rd-navbar-main-outer
+					.rd-navbar-main
+						// RD Navbar Panel
+						.rd-navbar-panel
+							// RD Navbar Toggle
+							button.rd-navbar-toggle( data-rd-navbar-toggle='.rd-navbar-nav-wrap' ): span
+
+							// RD Navbar Brand
+							.rd-navbar-brand
+								+logo
+
+						.rd-navbar-nav-wrap
+							.rd-navbar-nav-container
+								include ../includes/_navigation
+
+								ul.contacts-classic
+									li
+										.contacts-classic-title Phone:
+										a( href='tel:#' ) +1 (409) 987–5874
+									li
+										.contacts-classic-title E-mail:
+										a( href='mailTo:#' ) info@demolink.org
+									li
+										.contacts-classic-title Follow Us:
+										+widget-list( 'list-social list-inline-sm' )
+
+				if( block )
+					block

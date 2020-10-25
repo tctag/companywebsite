@@ -1,0 +1,56 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-box-icon
+
+block variables
+	-
+		var
+			activeCategory = 'contacts'
+			pageName = 'Contacts'
+
+block page
+	// Page Header
+	+header-sidebar
+	+breadcrumbs-classic
+
+	// Contacts
+	section.section.section-xl.bg-default
+		.container
+			.row.row-30.justify-content-center
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.1s' )
+					+contacts-modern({
+						icon: 'fl-bigmug-line-cellphone55',
+						tel: [
+							{ text: '+1 323-913-4688' },
+							{ text: '+1 323-888-4554' }
+						]
+					})
+				.col-sm-6.col-md-4.wow.blurIn
+					+contacts-modern({
+						icon: 'fl-bigmug-line-up104',
+						address: [
+							{ text: '4730 Crystal Springs Dr, <br>Los Angeles, CA 90027' }
+						]
+					})
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.1s' )
+					+contacts-modern({
+						icon: 'fl-bigmug-line-chat55',
+						mail: [
+							{ text: 'mail@demolink.org' },
+							{ text: 'info@demolink.org' }
+						]
+					})
+
+	//Google Map
+	section.section
+		//Please, add the data attribute data-key="YOUR_API_KEY" in order to insert your own API key for the Google map.
+		//Please note that YOUR_API_KEY should replaced with your key.
+		//Example: <div class="google-map-container" data-key="YOUR_API_KEY">
+		.google-map-container( data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-zoom='5', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png', data-styles='[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]' )
+			.google-map
+			ul.google-map-markers
+				li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow' )
+
+	// Page Footer
+	include ../sections/_footer-classic

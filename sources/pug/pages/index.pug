@@ -1,0 +1,218 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-team
+include ../components/_ui-project
+include ../components/_ui-post
+
+block variables
+	-
+		var
+			activeCategory = 'home'
+			pageName = 'Home'
+
+block page
+	// Page Header
+	+header-sidebar
+		ul.nav-custom.rd-navbar-nav
+			li.active: a.nav-custom-counter( href='#home' )
+			li: a.nav-custom-counter( href='#about' )
+			li: a.nav-custom-counter( href='#works' )
+			li: a.nav-custom-counter( href='#team' )
+			li: a.nav-custom-counter( href='#clients' )
+			li: a.nav-custom-counter( href='#projects' )
+			li: a.nav-custom-counter( href='#news' )
+			li: a.nav-custom-counter( href='#contacts' )
+
+	// DePaletra
+	section#home.section.section-full.section-inset-1.bg-default.text-center.bg-image.background-position-1( style='background-image: url(images/bg-image-1-1920x800.jpg)' )
+		.container
+			.title-style-1-wrap: .oh-desktop.wow.slideInLeft: h1.title-style-1.wow.slideInRight DePaletra
+			.title-style-2-wrap: .oh-desktop.wow.slideInRight: h5.title-style-2.wow.slideInLeft Web Design Studio
+			a.button.button-default.wow.fadeInUp( href= links.about ) More about us
+
+	// About Us
+	section#about.section.section-full.section-xxl.bg-default
+		.container: .row.row-30.justify-content-center
+			.col-sm-9.col-md-5.cube-classic-wrap
+				.subtitle-classic.wow.fadeInLeft Welcome to our website!
+				h2.wow.fadeInLeft Our creativity
+					=' '
+					br.d-none.d-md-block
+					span.text-primary is your
+					|  start of
+					=' '
+					br.d-none.d-md-block
+					| successful projects
+
+				.cube-classic.cube-classic-1
+					-for( var i = 0; i < 100; i++)
+						span.cube-classic-item
+
+			.col-md-7.col-lg-6.col-xl-5
+				p.wow.fadeInRight DePaletra is a creative design studio founded in 1999. We specialize in creating custom Web Design & Development, Graphic Design, Brand Development, Online Marketing, and SEO as our core services. Our team works flawlessly and timely to create a website of your dream in a time that meets your deadlines and preferences.
+				p.wow.fadeInRight We are a team of top industry leaders with years of experience in web design and development who strive for creating websites that attract the attention of your potential customers and business partners.
+				a.wow.fadeInRight.button.button-default( href= links.about ) More about us
+
+	// Selected works
+	section#works.section.section-full.section-md.bg-gray-100.section-background-custom
+		.container: .row.row-30.justify-content-center.justify-content-lg-end.align-items-md-center
+			.col-sm-8.col-md-6.col-lg-5.cube-classic-wrap
+				.subtitle-classic.wow.fadeInLeft Selected works
+				h2.wow.fadeInLeft( data-wow-delay='.1s' ) Check out the
+					=' '
+					br.d-none.d-md-block
+					| latest projects
+					=' '
+					br.d-none.d-md-block
+					| we completed
+				p.wow.fadeInLeft Our team works on a wide variety of web design & development projects every day. We deliver quality solutions for your websites that are based on our boundless creativity and your needs.
+				.cube-classic.cube-classic-2
+					-for( var i = 0; i < 100; i++)
+						span.cube-classic-item
+
+			.col-sm-8.col-md-6.wow.blurIn: .inset-xl-left-25
+				// Owl Carousel
+				.owl-carousel.owl-style-1( data-loop='true' data-items='1' data-nav='true' )
+					+jpg('index-1-618x614')
+					+jpg('index-2-618x614')
+					+jpg('index-3-618x614')
+
+		.background-custom-1.bg-default
+
+	// Our Team
+	section#team.section.section-full.section-sm.bg-default.text-md-center
+		.container
+			.subtitle-classic.wow.fadeInUp Meet our team
+			h2
+				span.d-inline-block.wow.fadeInLeft People behind
+				=' '
+				span.text-primary.d-inline-block.wow.fadeInRight our success
+			.row.row-lg.row-30.justify-content-center
+				.col-sm-6.col-md-4
+					+team-classic({
+						img: 'team-1-370x502',
+						name: 'Sarah McMillan',
+						status: 'Web Designer'
+					}).box-md
+				.col-sm-6.col-md-4
+					+team-classic({
+						img: 'team-2-370x502',
+						name: 'Eric Smith',
+						status: 'CEO, Founder'
+					}).box-md
+				.col-sm-6.col-md-4
+					+team-classic({
+						img: 'team-3-370x502',
+						name: 'Ted Johnson',
+						status: 'Web Developer'
+					}).box-md
+
+	// Clients
+	section#clients.section.section-full.section-xl.bg-gray-100.text-md-center
+		.container
+			.subtitle-classic.wow.fadeInUp Our clients and partners
+			h2
+				span.d-inline-block.wow.fadeInLeft Happy
+				=' '
+				span.d-inline-block.wow.fadeInRight clients
+			.row.row-xxl.bordered-classic
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInLeft( href='#' ): +png( 'clients-1-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInDown( href='#' data-wow-delay='.1s' ): +png( 'clients-2-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInDown( href='#' data-wow-delay='.2s' ): +png( 'clients-3-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInRight( href='#' data-wow-delay='.3s' ): +png( 'clients-4-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInLeft( href='#' data-wow-delay='.3s' ): +png( 'clients-5-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInUp( href='#' data-wow-delay='.2s' ): +png( 'clients-6-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInUp( href='#' data-wow-delay='.1s' ): +png( 'clients-7-160x110' )
+				.col-6.col-sm-4.col-md-3: a.clients-classic.wow.slideInRight( href='#' ): +png( 'clients-8-160x110' )
+
+	// Portfolio
+	section#projects.section.section-full.section-xs.section-first.bg-default.text-md-center
+		.container
+			.subtitle-classic.wow.fadeInUp Portfolio
+			h2
+				span.d-inline-block.wow.fadeInLeft Our featured
+				=' '
+				span.text-primary.d-inline-block.wow.fadeInRight projects
+			.row.row-lg.row-30
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.2s' )
+					+project-classic({
+						img: 'project-1-370x262',
+						title: 'iStep Ltd.',
+						tag: 'Web Design'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.1s' )
+					+project-classic({
+						img: 'project-2-370x262',
+						title: 'Fabricator',
+						tag: 'Web Development'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn
+					+project-classic({
+						img: 'project-3-370x262',
+						title: 'Fresh Market',
+						tag: 'SEO'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn
+					+project-classic({
+						img: 'project-4-370x262',
+						title: 'Accessories Inc.',
+						tag: 'Online Marketing'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.1s' )
+					+project-classic({
+						img: 'project-5-370x262',
+						title: 'Corpadvise',
+						tag: 'SMM'
+					}).box-md
+				.col-sm-6.col-md-4.wow.blurIn( data-wow-delay='.2s' )
+					+project-classic({
+						img: 'project-6-370x262',
+						title: 'Greenbiz',
+						tag: 'Branding'
+					}).box-md
+
+	// Blog
+	section#news.section.section-full.section-xs.section-last.bg-default.text-md-center
+		.container
+			.subtitle-classic.wow.fadeInUp Recent posts
+			h2
+				span.d-inline-block.wow.fadeInLeft Latest news
+				=' '
+				span.d-inline-block.wow.fadeInRight & updates
+			.row.row-xxl.row-30.justify-content-center
+				.col-sm-6.col-lg-4.wow.blurIn( data-wow-delay='.1s' )
+					+post-classic({
+						time: {
+							datetime: '2018-05-04',
+							dateText: 'May 4, 2018'
+						},
+						title: 'Top 10 Web Design Trends in 2018',
+						text: 'As we look forward to 2018, the big question on every designer’s mind has to be: what will define design this year? We asked the most prominent designers and…',
+						author: 'Sofia Helin'
+					})
+				.col-sm-6.col-lg-4.wow.blurIn
+					+post-classic({
+						time: {
+							datetime: '2018-05-04',
+							dateText: 'May 4, 2018'
+						},
+						title: 'Designing for a Local Audience',
+						text: 'Local design techniques require a lot of attention to detail and personalization. In this article, we want to discuss 5 ways in which web design can be more aptly…',
+						author: 'Jay Benjamin'
+					})
+				.col-sm-6.col-lg-4.wow.blurIn( data-wow-delay='.1s' )
+					+post-classic({
+						time: {
+							datetime: '2018-05-04',
+							dateText: 'May 4, 2018'
+						},
+						title: 'How to Design Your Site for Mobile Speed',
+						text: 'Have you performed a mobile speed test lately? How does your website rank? A slow website can turn mobile users away. Ideally, you want your design to load just…',
+						author: 'Mark Stone'
+					})
+
+			a.button.button-default( href= links.post ) More news
+
+	// Page Footer
+	include ../sections/_footer-classic

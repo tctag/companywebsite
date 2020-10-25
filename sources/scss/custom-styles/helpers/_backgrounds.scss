@@ -1,0 +1,141 @@
+/*
+* Backgrounds
+*/
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+/*
+* Light Backgrounds
+*/
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+/*
+* Dark Backgrounds
+*/
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+.bg-gray-900 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-900);
+}
+
+.bg-gray-3 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-3);
+}
+
+/*
+* Accent Backgrounds
+*/
+.bg-primary {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+}
+
+/*
+* Background Image
+*/
+.bg-image {
+	background-size: cover;
+	background-position: center center;
+}
+
+[class*='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+
+/*
+* Background Position
+*/
+.background-position-1 {
+	background-position: 30% 50%;
+
+	// Medium ≥576px
+	@include media-breakpoint-up(sm) {
+		background-position: 40% 50%;
+	}
+}
+
+
+
+//
+// Background Custom
+//
+.section-background-custom {
+	position: relative;
+	z-index: 1;
+}
+
+.background-custom-1 {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: calc(50% + 180px);
+	z-index: -1;
+
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
+	
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+		left: calc(50% + 250px);
+	}
+	
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		left: calc(50% + 355px); 
+	} 
+}
